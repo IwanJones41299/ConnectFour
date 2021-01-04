@@ -6,7 +6,7 @@ namespace ConnectFour
     {
         static void Main(string[] args)
         {
-            
+            PlayerInfo.PlayerName();
         }
     }
 }
