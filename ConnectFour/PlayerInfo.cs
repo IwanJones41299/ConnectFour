@@ -11,10 +11,10 @@ namespace ConnectFour
         private char _playerChip;
 
         //Constructors
-        public PlayerInfo(string playerName)
+        public PlayerInfo(char playerChip)
         {
-            _playerName = playerName;
-            _playerChip = 'X';
+            _playerName = PlayerName();
+            _playerChip = playerChip;
         }
 
         public PlayerInfo(string playerName, char playerChip)
@@ -31,32 +31,32 @@ namespace ConnectFour
 
         public char getPlayerchip
         {
-           get { return _playerChip; }
+            get { return _playerChip; }
             set { _playerChip = value; }
         }
 
 
         //Methods
-        public static void PlayerName()
+        public string PlayerName()
         {
             Console.WriteLine("Player... Please enter your username! ");
-            CheckDB(Console.ReadLine()); 
+            return Console.ReadLine(); 
         }
 
-        //This method is simulating the game checking a db for usernames to see if the one being entered is in use
-        static void CheckDB(string player)
-        {
-            string[] playernames = { "IwanJones", "RhysDavo", "Cie" };
+        ////This method is simulating the game checking a db for usernames to see if the one being entered is in use
+        //static void CheckDB(string player)
+        //{
+        //    string[] playernames = { "IwanJones", "RhysDavo", "Cie" };
 
-            foreach (string user in playernames)
-            {
-                if(player == user)
-                {
-                    Console.WriteLine("Please enter another username, this one is taken");
-                    CheckDB(Console.ReadLine());
-                }
-            }
-            Console.WriteLine("Welcome " + player);
-        }
+        //    foreach (string user in playernames)
+        //    {
+        //        if(player == user)
+        //        {
+        //            Console.WriteLine("Please enter another username, this one is taken");
+        //            CheckDB(Console.ReadLine());
+        //        }
+        //    }
+        //    Console.WriteLine("Welcome " + player);
+        //}
     }
 }
