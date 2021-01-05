@@ -48,39 +48,6 @@ namespace ConnectFour
             }
         }
 
-        public bool IsValidPosition(int column, int row)
-        {
-            if (column > -1 && column < _width)
-            {
-                if (row > -1 && row < _height)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        public bool SetValue(int column, int row, char value)
-        {
-            if (IsValidPosition(column, row))
-            {
-                _board[column, row] = value;
-                return true;
-            }
-            return false;
-        }
-
-        public bool GetValue(int column, int row, out char value)
-        {
-            value = ' ';
-            if (IsValidPosition(column, row))
-            {
-                value = _board[column, row];
-                return true;
-            }
-            return false;
-        }
-
         public virtual void Display()
         {
             for (int row = 0; row < _height; row++)
